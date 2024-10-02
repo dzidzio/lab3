@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Категорії</title>
+    <link rel="stylesheet" href="categories.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <img src="logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="categories.html">Категорії</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="register-link">
+            <a href="register.html">Sign in</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="categories">
+            <h1>Категорії</h1>
+            <div class="category-buttons">
+                <button onclick="scrollToSection('cars')">Авто</button>
+                <button onclick="scrollToSection('houses')">Будинки</button>
+                <button onclick="scrollToSection('other')">Інше</button>
+            </div>
+
+            <section id="cars">
+                <h2>Авто</h2>
+                <div class="item-grid">
+                    <div class="item">
+                        <img src="car1.jpg" alt="Авто 1">
+                        <p>Оренда: 500 грн/день</p>
+                    </div>
+                    <div class="item">
+                        <img src="car2.jpg" alt="Авто 2">
+                        <p>Оренда: 700 грн/день</p>
+                    </div>
+                    <div class="item">
+                        <img src="car3.jpg" alt="Авто 3">
+                        <p>Оренда: 600 грн/день</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="houses">
+                <h2>Будинки</h2>
+                <div class="item-grid">
+                    <div class="item">
+                        <img src="house1.jpg" alt="Будинок 1">
+                        <p>Оренда: 3000 грн/день</p>
+                    </div>
+                    <div class="item">
+                        <img src="house2.jpg" alt="Будинок 2">
+                        <p>Оренда: 4000 грн/день</p>
+                    </div>
+                    <div class="item">
+                        <img src="house3.jpg" alt="Будинок 3">
+                        <p>Оренда: 3500 грн/день</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="other">
+                <h2>Інше</h2>
+                <div class="item-grid">
+                    <div class="item">
+                        <img src="motel.jpg" alt="Мотель">
+                        <p>Оренда: 1000 грн/день</p>
+                    </div>
+                    <div class="item">
+                        <img src="tent.jpg" alt="Палатка">
+                        <p>Оренда: 100 грн/день</p>
+                    </div>
+                    <div class="item">
+                        <img src="bike.jpg" alt="Велосипед">
+                        <p>Оренда: 200 грн/день</p>
+                    </div>
+                </div>
+            </section>
+
+            <button class="scroll-to-top" onclick="scrollToTop()">На гору</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>All right served</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/_vladichok?igsh=MXRlODVkeDlpcXBwaQ==">Instagram</a> |
+            <a href="https://t.me/vladichok_v">Telegram</a> |
+            <a href="tel:+380661657044">+38-(066)-165-670-44</a>
+        </div>
+    </footer>
+
+    <script>
+        window.onscroll = function () {
+            displayTopButton()
+        }
+        let topButton = document.getElementsByClassName("scroll-to-top")[0];
+
+        function displayTopButton() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
